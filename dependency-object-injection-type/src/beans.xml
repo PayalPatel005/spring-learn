@@ -5,16 +5,14 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean id="mathCheatObjectValue" class="com.springLearn.objdi.MathCheat"></bean>
+
 	<bean id="stu" class="com.springLearn.objdi.Student">
 		<property name="id" value="1002"></property>
-		<property name="mathCheat">
-			<bean class="com.springLearn.objdi.MathCheat"></bean>
-		</property>
+		<property name="mathCheat" ref="mathCheatObjectValue"/>
 	</bean>
 	
 	<bean id="anotherStu" class="com.springLearn.objdi.AnotherStudent">
-		<property name="cheat">
-			<bean class="com.springLearn.objdi.MathCheat"></bean>
-		</property>
+		<property name="cheat" ref="mathCheatObjectValue"/>
 	</bean>
 </beans>
